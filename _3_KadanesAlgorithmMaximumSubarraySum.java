@@ -371,7 +371,7 @@ public class MaximumSumRectangle_4 {
                 temp[i] = 0;
             }
             for (int right = left; right < cols; right++){ // for(int k = j; k < cols; k++){
-                // filling the row sum
+                // filling the row sum in temp[]
                 for (int i = 0; i < rows; i++){
                     temp[i] += arr[i][right];  // temp[i] += arr[i][k];
                 }
