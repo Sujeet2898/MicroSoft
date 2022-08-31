@@ -364,15 +364,16 @@ public class MaximumSumRectangle_4 {
         int cols = arr[0].length;
         int temp[] = new int[rows];
         int ans = 0;
-
-        for (int left = 0; left < cols; left++){
-            for (int i = 0; i < rows; i++){
+            
+        // j and k tranverse through columns
+        for (int left = 0; left < cols; left++){  // for(int j = 0; j < cols; j++){
+            for (int i = 0; i < rows; i++){  // initially temp[] is empty
                 temp[i] = 0;
             }
-            for (int right = left; right < cols; right++){
+            for (int right = left; right < cols; right++){ // for(int k = j; k < cols; k++){
                 // filling the row sum
                 for (int i = 0; i < rows; i++){
-                    temp[i] += arr[i][right];
+                    temp[i] += arr[i][right];  // temp[i] += arr[i][k];
                 }
                 ans = Math.max(ans, maxSubarraySum(temp));
             }
